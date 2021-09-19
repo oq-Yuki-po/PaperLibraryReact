@@ -1,0 +1,19 @@
+@use 'varible' as v;
+
+.arxiv-query{
+    width: 100%;
+
+    &-title{
+        padding:  v.$padding-m;
+        font-size: v.$font-size-m;
+    }
+    &-form{
+        height: 80px;
+    }
+    &-item{
+        margin-top: v.$margin-s;
+        margin-bottom: v.$margin-s;
+        margin-left: v.$margin-xl;
+        width: 600px;
+    }
+}
