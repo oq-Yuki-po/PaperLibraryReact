@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import {
     IconButton,
@@ -9,13 +9,16 @@ import {
     DialogContent,
     DialogContentText,
     DialogActions,
-    Button
+    Button,
+    FormControlLabel,
+    Switch
 } from '@mui/material';
 import { Delete } from '@material-ui/icons';
 export default function ArxivQueryItem(props) {
 
     const [isChecked, setisChecked] = useState(props.is_active)
     const [isVisible, setisVisible] = useState(true)
+    const [switchLabel, setSwitchLabel] = useState('')
     const [open, setOpen] = React.useState(false);
 
     function handleOnChange(e) {
@@ -28,6 +31,11 @@ export default function ArxivQueryItem(props) {
                 alert(error.response.data['message'])
             });
     }
+    useEffect(() => {
+        
+        isChecked?setSwitchLabel('有効'):setSwitchLabel('無効')
+        
+    }, [isChecked])
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -52,19 +60,20 @@ export default function ArxivQueryItem(props) {
 
     return (
         isVisible && <li className='arxiv-query-item'>
-            <Checkbox checked={isChecked} onChange={handleOnChange} color="primary" />
-            <Tooltip title={props.arxiv_query} arrow>
+            <Tooltip title={props.arxiv_query} placement="bottom-start">
                 <TextField
                     value={props.arxiv_query}
                     variant="outlined"
                     InputProps={{
                         readOnly: true,
+                        
                     }}
                     sx={{ textOverflow: 'ellipsis' }}
-                    style={{ width: 400 }}
+                    style={{ width: 400 ,  m: 3 }}
                     size="small"
                 />
             </Tooltip>
+            <FormControlLabel control={<Switch checked={isChecked}  onChange={handleOnChange}/>} label={switchLabel} labelPlacement="start"/>
             <IconButton onClick={handleClickOpen}>
                 <Delete color='error' />
             </IconButton>

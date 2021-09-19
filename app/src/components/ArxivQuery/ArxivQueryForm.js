@@ -49,18 +49,21 @@ export default function ArxivQueryForm(props) {
     };
 
     return (
-        <Box sx={{ display: 'flex', width: 600 }} className='arxiv-query-form'>
+        <Box sx={{ display: 'flex' }} className='arxiv-query-form'>
             <TextField value={inputText} size="small"
                 error={inputError}
                 helperText={helperText}
                 onChange={handleOnChange}
-                variant="outlined"
-                label="登録ワード"
+                variant="filled"
+                label="Search Keyword"
                 sx={{ m: 2 }}
-                style={{ width: 400 }} />
+                style={{ width: 500 }}
+                // inputProps={{ style: { fontSize: 20 } }} // font size of input text
+                // InputLabelProps={{ style: { fontSize: 20 } }} // font size of input label 
+            />
             <Button onClick={handleOnClick}
                 variant='contained'
-                sx={{ m: 2 }}
+                sx={{ m: 2, mt: 3, height: 40 }}
                 size="large">登録</Button>
             <Dialog open={open}
                 onClose={handleClose}
