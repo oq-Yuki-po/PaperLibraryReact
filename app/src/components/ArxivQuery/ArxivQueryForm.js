@@ -58,8 +58,6 @@ export default function ArxivQueryForm(props) {
                 label="Search Keyword"
                 sx={{ m: 2 }}
                 style={{ width: 500 }}
-                // inputProps={{ style: { fontSize: 20 } }} // font size of input text
-                // InputLabelProps={{ style: { fontSize: 20 } }} // font size of input label 
             />
             <Button onClick={handleOnClick}
                 variant='contained'
@@ -67,7 +65,6 @@ export default function ArxivQueryForm(props) {
                 size="large">登録</Button>
             <Dialog open={open}
                 onClose={handleClose}
-                aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description">
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">
