@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import Box from '@mui/material/Box';
+import { Box, List, Typography } from '@mui/material';
 
 import ArxivQueryForm from './ArxivQueryForm'
 import ArxivQueryItem from './ArxivQueryItem'
@@ -32,7 +32,7 @@ export default function ArxivQuery() {
 
     return (
         <div>
-            <h1 className='arxiv-query-title'>検索キーワード登録</h1>
+            <Typography variant="h4" component="div" sx={{ m: 2 }}>検索キーワード登録</Typography>
             <Box
                 sx={{
                     display: 'flex',
@@ -42,9 +42,9 @@ export default function ArxivQuery() {
                 }}>
 
                 <ArxivQueryForm AddQueryItem={AddQueryItem} />
-                <ul>
+                <List sx={{ height: 600, overflow: 'auto', maxHeight: 600 }}>
                     {QueryList}
-                </ul>
+                </List>
             </Box>
         </div>
     )

@@ -49,7 +49,7 @@ export default function ArxivQueryForm(props) {
     };
 
     return (
-        <Box sx={{ display: 'flex' }} className='arxiv-query-form'>
+        <Box sx={{ display: 'flex', height: 100 }} className='arxiv-query-form'>
             <TextField value={inputText} size="small"
                 error={inputError}
                 helperText={helperText}

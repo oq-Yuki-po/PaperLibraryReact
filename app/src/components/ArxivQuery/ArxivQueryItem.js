@@ -10,7 +10,8 @@ import {
     DialogActions,
     Button,
     FormControlLabel,
-    Switch
+    Switch,
+    ListItem
 } from '@mui/material';
 import { Delete } from '@material-ui/icons';
 export default function ArxivQueryItem(props) {
@@ -31,9 +32,9 @@ export default function ArxivQueryItem(props) {
             });
     }
     useEffect(() => {
-        
-        isChecked?setSwitchLabel('有効'):setSwitchLabel('無効')
-        
+
+        isChecked ? setSwitchLabel('有効') : setSwitchLabel('無効')
+
     }, [isChecked])
 
     const handleClickOpen = () => {
@@ -58,21 +59,21 @@ export default function ArxivQueryItem(props) {
     }
 
     return (
-        isVisible && <li className='arxiv-query-item'>
+        isVisible && <ListItem key={props.arxiv_query_id}>
             <Tooltip title={props.arxiv_query} placement="bottom-start">
                 <TextField
                     value={props.arxiv_query}
                     variant="outlined"
                     InputProps={{
                         readOnly: true,
-                        
+
                     }}
                     sx={{ textOverflow: 'ellipsis' }}
-                    style={{ width: 400 ,  m: 3 }}
+                    style={{ width: 450 }}
                     size="small"
                 />
             </Tooltip>
-            <FormControlLabel control={<Switch checked={isChecked}  onChange={handleOnChange}/>} label={switchLabel} labelPlacement="start"/>
+            <FormControlLabel control={<Switch checked={isChecked} onChange={handleOnChange} />} label={switchLabel} labelPlacement="start" />
             <IconButton onClick={handleClickOpen}>
                 <Delete color='error' />
             </IconButton>
@@ -90,6 +91,6 @@ export default function ArxivQueryItem(props) {
                     <Button onClick={onRemoveClick} autoFocus>OK</Button>
                 </DialogActions>
             </Dialog>
-        </li >
+        </ListItem>
     )
 }
