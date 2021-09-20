@@ -7,13 +7,24 @@
 		// Update 'VARIANT' to pick a Node version: 12, 14, 16
 		"args": { "VARIANT": "16" }
 	},
+	// "runArgs": ["-v", "/Users/${USER}/.ssh/:/home/vscode/.ssh"],
 
 	// Set *default* container specific settings.json values on container create.
 	"settings": {},
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"dbaeumer.vscode-eslint"
+		"dbaeumer.vscode-eslint",
+		"ionutvmi.path-autocomplete",
+		"esbenp.prettier-vscode",
+		"donjayamanne.githistory",
+		"eamodio.gitlens",
+		"coenraads.bracket-pair-colorizer",
+		"saikou9901.evilinspector",
+		"streetsidesoftware.code-spell-checker",
+		"formulahendry.auto-rename-tag",
+		"formulahendry.auto-close-tag",
+		"visualstudioexptteam.vscodeintellicode"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
