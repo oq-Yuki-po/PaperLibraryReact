@@ -15,8 +15,8 @@ import {
 import { Delete } from '@material-ui/icons';
 export default function ArxivQueryItem(props) {
 
-    const [isChecked, setisChecked] = useState(props.is_active)
-    const [isVisible, setisVisible] = useState(true)
+    const [isChecked, setIsChecked] = useState(props.is_active)
+    const [isVisible, setIsVisible] = useState(true)
     const [switchLabel, setSwitchLabel] = useState('')
     const [open, setOpen] = React.useState(false);
 
@@ -25,7 +25,7 @@ export default function ArxivQueryItem(props) {
         const json_body = { arxiv_query_id: props.arxiv_query_id };
         axios.put('https://localhost/arxiv_query/', json_body)
             .then(res => {
-                setisChecked(!e.target.checked)
+                setIsChecked(!e.target.checked)
             }).catch(error => {
                 alert(error.response.data['message'])
             });
@@ -52,7 +52,7 @@ export default function ArxivQueryItem(props) {
             data: { arxiv_query_id: props.arxiv_query_id },
         })
             .then(res => {
-                setisVisible(false)
+                setIsVisible(false)
             }).catch(error => {
             });
     }
