@@ -151,8 +151,7 @@ export default function ArxivPapers() {
                     />
                     <Button variant="contained" sx={{ m: 2 }} onClick={handleClickSearch}>検索</Button>
                 </Box>
-
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+                <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' , width: 1600, height: 700}}>
                     {paper_list}
                 </Box>
                 {visible_pagination && <Pagination count={all_page_size} page={page} onChange={handlePageChange} color="primary" />}
