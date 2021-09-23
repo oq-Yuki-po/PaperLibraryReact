@@ -6,8 +6,8 @@ export default function Header() {
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
                 <Toolbar>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        論文まとめ
+                    <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
+                        Paper Library
                     </Typography>
                     <HeaderNavLink link='/' link_name='論文一覧' />
                     <HeaderNavLink link='/arxiv_query' link_name='検索キーワード登録' />

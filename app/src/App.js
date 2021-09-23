@@ -7,6 +7,7 @@ import {
   Route
 } from "react-router-dom";
 import Header from "./components/Header/Header";
+import ArxivPapers from './components/ArxivPapers/ArxivPapers';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           <ArxivQuery />
         </Route>
         <Route path="/">
-          <div>papers</div>
+          <ArxivPapers />
         </Route>
       </Switch>
     </Router>
